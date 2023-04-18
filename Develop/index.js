@@ -1,5 +1,5 @@
 const { writeFile } = require("fs");
-const { default: inquirer } = require('inquirer');
+const { prompt } = require('inquirer');
 
 // TODO: Include packages needed for this application
 
@@ -11,12 +11,12 @@ const questions = [
     'Please explain application user information.',
     'Please explain contribution guidelines.',
     'Please give test instructions.'
-                ];
+];
 
-console.log (questions);
+console.log(questions);
 
-inquirer
-  .prompt([
+
+prompt([
     {
         type: 'input',
         message: 'What is your project title?',
@@ -42,21 +42,21 @@ inquirer
         message: 'Please give test instructions.',
         name: 'instructions',
     },
-  ])
-  .then((response) =>
-    writeFile(`${response.name}.json`, JSON.stringify(response),  err => { 
-        if (err) {
-            throw err;
-        }
-        console.log ('File successfully created.');
-    } )
-  );
+])
+    .then((response) =>
+        writeFile(`${response.name}.md`, JSON.stringify(response), err => {
+            if (err) {
+                throw err;
+            }
+            console.log('File successfully created.');
+        })
+    );
 
 // TODO: Create a function to write README file
-function writeToFile(fileName, data) {}
+function writeToFile(fileName, data) { }
 
 // TODO: Create a function to initialize app
-function init() {}
+function init() { }
 
 // Function call to initialize app
 init();
