@@ -1,1 +1,0 @@
-{"title":"Project 1","description":"It's basic.","installation":"I'll let you know.","contribution":"It's secret.","instructions":"Thinking about it."}
