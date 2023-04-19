@@ -1,5 +1,4 @@
 // TODO: Include packages needed for this application
-const { create } = require("domain");
 const { writeFile } = require("fs");
 const { prompt } = require('inquirer');
 
@@ -32,7 +31,7 @@ prompt([
     },
     {
         type: 'input',
-        message: 'Please give test instructions.',
+        message: 'Please give instructions on how to test this application.',
         name: 'instructions',
     },
     {
@@ -86,10 +85,10 @@ function writeToFile(response) {
 ## BADGE
 ${createBadge(response.license)}
 
-## DESCRIPTION
-${response.description}
-
 ## TABLE OF CONTENTS
+
+[DESCRIPTION](#description)
+
 [INSTALLATION](#installation)
 
 [USAGE](#usage)
@@ -101,6 +100,9 @@ ${response.description}
 [TESTS](#tests)
 
 [QUESTIONS](#questions)
+
+## [DESCRIPTION](#description)
+${response.description}
 
 ## [INSTALLATION](#installation)
 ${response.installation}
@@ -118,6 +120,8 @@ ${response.contribution}
 ${response.instructions}
 
 ## [QUESTIONS](#questions)
+If you have any questions, please feel free to reach out to the author of this application at the following GitHub page and email address.
+
 https://github.com/${response.gitUsername}
 
 [${response.email}](${response.email})
@@ -125,6 +129,11 @@ https://github.com/${response.gitUsername}
 }
 
 function createBadge (license) {
+
+    // if (license !== 'None') {
+    //     `[](https://imgs.shields.io/badge/license-${license.replace(/ /g, '%20')}-blue.svg)`;
+    // }
+    
     var badge = ''
         if (license === 'None') {
             return;
@@ -133,14 +142,8 @@ function createBadge (license) {
             badge = `![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)`
         } else if (license === 'MIT') {
             badge = `![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)`
-        } else if (license === 'Perl') {
+        } else if (license === 'PERL') {
             badge = `![License: Artistic-2.0](https://img.shields.io/badge/License-Perl-0298c3.svg)`
         }
         return badge;
 }
-
-// TODO: Create a function to initialize app
-function init() { }
-
-// Function call to initialize app
-init();
