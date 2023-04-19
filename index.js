@@ -22,6 +22,11 @@ prompt([
     },
     {
         type: 'input',
+        message: 'Please explain the usage information.',
+        name: 'usage',
+    },
+    {
+        type: 'input',
         message: 'Please explain contribution guidelines.',
         name: 'contribution',
     },
@@ -30,25 +35,35 @@ prompt([
         message: 'Please give test instructions.',
         name: 'instructions',
     },
+    {
+        type: 'input',
+        message: 'Please enter your GitHub user ID.',
+        name: 'gitUsername'
+    },
+    {
+        type: 'input',
+        message: 'Please enter your email address.',
+        name: 'email'
+    },
     {   
-        type: 'expand',
+        type: 'list',
         message: 'Please select your license.',
         name: 'license',
         choices: [
             {
-                key: 'a',
+                key: '1',
                 value: 'Apache 2.0',
             },
             {
-                key: 'b',
+                key: '2',
                 value: 'MIT',
             },
             {
-                key: 'c',
+                key: '3',
                 value: 'PERL',
             },
             {
-                key: 'd',
+                key: '4',
                 value: 'None',
             },
         ]
@@ -66,30 +81,35 @@ prompt([
 
 // TODO: Create a function to write README file
 function writeToFile(response) {
-    return `# Professional README Generator Starter Code
+    return `# ${response.title}
 
-[How to create a Professional README](https://coding-boot-camp.github.io/full-stack/github/professional-readme-guide)
-
-## a PROJECT TITLE
-${response.title}
+## aa BADGE
+${createBadge(response.license)}
 
 ## b DESCRIPTION
 ${response.description}
 
-## c INSTALLATION INSTRUCTIONS
+## c TABLE OF CONTENTS
+
+## [Installation]INSTALLATION
 ${response.installation}
 
-## d CONTRIBUTION GUIDELINES
-${response.contribution}
-
-## e TEST INSTRUCTIONS
-${response.instructions}
+## e USAGE
+${response.usage}
 
 ## f LICENSE
 ${response.license}
 
-## g BADGE
-${createBadge(response.license)}
+## g CONTRIBUTING
+${response.contribution}
+
+## h TESTS
+${response.instructions}
+
+## i QUESTIONS
+https://github.com/${response.gitUsername}
+
+[${response.email}](${response.email})
 `
 }
 
