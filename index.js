@@ -83,30 +83,41 @@ prompt([
 function writeToFile(response) {
     return `# ${response.title}
 
-## aa BADGE
+## BADGE
 ${createBadge(response.license)}
 
-## b DESCRIPTION
+## DESCRIPTION
 ${response.description}
 
-## c TABLE OF CONTENTS
+## TABLE OF CONTENTS
+[INSTALLATION](#installation)
 
-## [Installation]INSTALLATION
+[USAGE](#usage)
+
+[LICENSE](#license)
+
+[CONTRIBUTING](#contributing)
+
+[TESTS](#tests)
+
+[QUESTIONS](#questions)
+
+## [INSTALLATION](#installation)
 ${response.installation}
 
-## e USAGE
+## [USAGE](#usage)
 ${response.usage}
 
-## f LICENSE
+## [LICENSE](#license)
 ${response.license}
 
-## g CONTRIBUTING
+## [CONTRIBUTING](#contributing)
 ${response.contribution}
 
-## h TESTS
+## [TESTS](#tests)
 ${response.instructions}
 
-## i QUESTIONS
+## [QUESTIONS](#questions)
 https://github.com/${response.gitUsername}
 
 [${response.email}](${response.email})
