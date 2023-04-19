@@ -55,7 +55,6 @@ prompt([
     }
 ])
     .then((response) =>
-        // createBadge(answers.license),
         writeFile(`${response.title}.md`, writeToFile(response), (response), err => {
 
             if (err) {
@@ -88,23 +87,26 @@ ${response.instructions}
 
 ## f LICENSE
 ${response.license}
+
+## g BADGE
+${createBadge(response.license)}
 `
 }
 
-// function createBadge (license) {
-//     const badge = ''
-//         if (!license === none) {
-//             return;
-//         }
-//         else if (license === 'Apache 2.0') {
-//             badge = `![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)]`
-//         } else if (license === 'MIT') {
-//             badge = `![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)]`
-//         } else if (license === 'Perl') {
-//             badge = `![License: Artistic-2.0](https://img.shields.io/badge/License-Perl-0298c3.svg)]`
-//         }
-//         return badge;
-// }
+function createBadge (license) {
+    var badge = ''
+        if (!license) {
+            return;
+        }
+        else if (license === 'Apache 2.0') {
+            badge = `![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)`
+        } else if (license === 'MIT') {
+            badge = `![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)`
+        } else if (license === 'Perl') {
+            badge = `![License: Artistic-2.0](https://img.shields.io/badge/License-Perl-0298c3.svg)`
+        }
+        return badge;
+}
 
 // TODO: Create a function to initialize app
 function init() { }
