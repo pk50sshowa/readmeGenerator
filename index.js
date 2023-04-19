@@ -95,7 +95,7 @@ ${createBadge(response.license)}
 
 function createBadge (license) {
     var badge = ''
-        if (!license) {
+        if (license === 'None') {
             return;
         }
         else if (license === 'Apache 2.0') {

@@ -18,7 +18,7 @@ d
 e
 
 ## f LICENSE
-Apache 2.0
+MIT
 
 ## g BADGE
-![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)
+![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
