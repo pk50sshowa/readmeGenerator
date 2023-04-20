@@ -130,20 +130,23 @@ https://github.com/${response.gitUsername}
 
 function createBadge (license) {
 
-    // if (license !== 'None') {
-    //     `[](https://imgs.shields.io/badge/license-${license.replace(/ /g, '%20')}-blue.svg)`;
-    // }
+    if (license !== "None") {
+        return ` ![Github license](https://img.shields.io/badge/license-${license.replace(/ /g,'%20')}-blue.svg)`;
+      }
+      return "";
+    }
     
-    var badge = ''
-        if (license === 'None') {
-            return;
-        }
-        else if (license === 'Apache 2.0') {
-            badge = `![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)`
-        } else if (license === 'MIT') {
-            badge = `![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)`
-        } else if (license === 'PERL') {
-            badge = `![License: Artistic-2.0](https://img.shields.io/badge/License-Perl-0298c3.svg)`
-        }
-        return badge;
-}
+    
+    // var badge = ''
+    //     if (license === 'None') {
+    //         return;
+    //     }
+    //     else if (license === 'Apache 2.0') {
+    //         badge = `![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)`
+    //     } else if (license === 'MIT') {
+    //         badge = `![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)`
+    //     } else if (license === 'PERL') {
+    //         badge = `![License: Artistic-2.0](https://img.shields.io/badge/License-Perl-0298c3.svg)`
+    //     }
+    //     return badge;
+// }
