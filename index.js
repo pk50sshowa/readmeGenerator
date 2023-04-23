@@ -1,6 +1,7 @@
 // TODO: Include packages needed for this application
 const { writeFile } = require("fs");
 const { prompt } = require('inquirer');
+const createBadge = require('./createbadge.js');
 
 // TODO: Create an array of questions for user input
 prompt([
@@ -85,24 +86,22 @@ function writeToFile(response) {
 ## BADGE
 ${createBadge(response.license)}
 
-## TABLE OF CONTENTS
-
-[DESCRIPTION](#description)
-
-[INSTALLATION](#installation)
-
-[USAGE](#usage)
-
-[LICENSE](#license)
-
-[CONTRIBUTING](#contributing)
-
-[TESTS](#tests)
-
-[QUESTIONS](#questions)
-
 ## [DESCRIPTION](#description)
 ${response.description}
+
+## TABLE OF CONTENTS
+
+* [INSTALLATION](#installation)
+
+* [USAGE](#usage)
+
+* [LICENSE](#license)
+
+* [CONTRIBUTING](#contributing)
+
+* [TESTS](#tests)
+
+* [QUESTIONS](#questions)
 
 ## [INSTALLATION](#installation)
 ${response.installation}
@@ -127,26 +126,3 @@ https://github.com/${response.gitUsername}
 [${response.email}](${response.email})
 `
 }
-
-function createBadge (license) {
-
-    if (license !== "None") {
-        return ` ![Github license](https://img.shields.io/badge/license-${license.replace(/ /g,'%20')}-blue.svg)`;
-      }
-      return "";
-    }
-    
-    
-    // var badge = ''
-    //     if (license === 'None') {
-    //         return;
-    //     }
-    //     else if (license === 'Apache 2.0') {
-    //         badge = `![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)`
-    //     } else if (license === 'MIT') {
-    //         badge = `![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)`
-    //     } else if (license === 'PERL') {
-    //         badge = `![License: Artistic-2.0](https://img.shields.io/badge/License-Perl-0298c3.svg)`
-    //     }
-    //     return badge;
-// }
