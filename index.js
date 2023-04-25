@@ -70,7 +70,7 @@ prompt([
     }
 ])
     .then((response) =>
-        writeFile(`${response.title}.md`, writeToFile(response), (response), err => {
+        writeFile(`README.md`, writeToFile(response), (response), err => {
 
             if (err) {
                 throw err;
