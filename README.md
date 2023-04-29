@@ -24,7 +24,9 @@ This application creates a basic README document in Markdown format.
 Make sure to install both node.js and inquirer version 8.2.4 before running the application.
 
 ## [USAGE](#usage)
-This application is run through the terminal command line through node.js.
+This application is run through the terminal command line through node.js.  
+
+Here is a [Walkthrough Video](https://drive.google.com/file/d/1UuCBCM67mRyvmc2FNhNMpFH-dtMgV1uE/preview).  
 
 ## [LICENSE](#license)
 MIT
